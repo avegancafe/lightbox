@@ -1,15 +1,11 @@
-window.lightbox = function (src) {
+window.lightbox = function (data) {
     if (document.getElementsByClassName("lightbox-wrapper").lenght > 0 ) return;
     var node = document.createElement("div");
     var wrapper = document.createElement("div");
     var content = document.createElement("div");
     content.classList
         .add("lightbox-content");
-    window.src = src;
-    if (src.substring(0, 7) == "http://" || src.substring(0, 8) == "https://")
-        content.innerHTML = "<img src=\""+src+"\">";
-    else
-        content.innerHTML = "<img src=\"/assets/images/"+src+"\">";
+    content.innerHTML = data
     node.classList
         .add("lightbox");
     node.appendChild(content);
