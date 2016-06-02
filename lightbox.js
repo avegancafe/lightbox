@@ -23,6 +23,7 @@ window.lightbox = function (data) {
 };
 
 window.removeLightbox = function () {
+    if (document.getElementsByClassName("lightbox-wrapper") == null) return;
     document.getElementsByClassName("lightbox-wrapper")[0].classList.add("enter");
     setTimeout(function () {
         document.body.removeChild(document.getElementsByClassName("lightbox-wrapper")[0]);
